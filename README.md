@@ -43,6 +43,8 @@ Rank candidates based on a fitness score.
 
 Re-rank candidates when a candidate is starred.
 
+TF-IDF, Glove and Bert correctly rank the candidates based on the keyword provided. Our fit column measures the average fit of the different techniques using the weights of the first principal component. It correctly ranks the candidate based on the keyword.
+
 Bonus(es):
 
 We are interested in a robust algorithm, tell us how your solution works and show us how your ranking gets better with each starring action.
@@ -52,3 +54,7 @@ How can we filter out candidates which in the first place should not be in this 
 Can we determine a cut-off point that would work for other roles without losing high potential candidates?
 
 Do you have any ideas that we should explore so that we can even automate this procedure to prevent human bias?
+
+I filtered out the candidates with a minimum threshold for the number of connections and the fit score using the first quartile. The final dataframe (candidates database) contains 78 candidates. After ranking based on the score, we can rank based on the number of connections and we can also filter the candidates based on their location depending on where the position is located which is a way to filter out candidates who should not be on the list.
+
+The algorithm uses a specific keywork 'aspiring human resources' to rank the candidates. Any ideas that we should explore so that we can even automate this procedure to prevent human bias could be to retrain and update the method periodically, use different keywords and involve different stakeholders in the decision-making process.
